@@ -26,4 +26,4 @@
                         });
                     } // End if
                 });
-            })
+            }); //close document ready
