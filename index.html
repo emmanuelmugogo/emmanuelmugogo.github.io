@@ -1,307 +1,404 @@
 <!DOCTYPE html>
-<html>
-<title>EMMANUEL MUGOGO</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<!-- <link rel="stylesheet" href="w3.css"> -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
-}
+<html lang="en">
+    <head>
+        <title>Emmanuel Mugogo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image: url('Images/Emmanuel7.jpg');
-    min-height: 100%;
-}
+    </head>
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-    background-image: url("Images/Emmanuel21.jpg");
-    min-height: 400px;
-}
+        <!--Start of Navigation bar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#myPage">EMMANUEL MUGOGO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#myPage">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#portfolio">PORTFOLIO</a></li>   
+                        <li><a href="#skills">SKILLS</a></li> 
+                        <li><a href="#contact">CONTACT</a></li> 
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#resume">REQUEST RESUME</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--End of Navigation bar-->
 
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url("Images/Emmanuel20.jpg");
-    min-height: 400px;
-}
+        <!--home page-->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <!-- <div class="item active">
+                    <div class="fill" ><img src="img/Emmanuel.JPG" alt="Emmanuel 1" width="1200" height="700"></div>
+                    <div class="carousel-caption">
+                        <h1>Emmanuel Mugogo | Full Stack Web Developer</h1>
+                        <h2>Software Developer and Creator</h2>
+                    </div>
+                </div> -->
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
-}
-</style>
-<body>
+                <div class="item active">
+                    <img src="img/Emmanuel1.JPG" alt="Emmanuel 2" width="1200" height="700">
+                    <div class="carousel-caption">
+                        <h1>Emmanuel Mugogo | Full Stack Web Developer</h1>
+                        <h2>Software Developer and Creator</h2>
+                    </div>
+                </div>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <ul class="w3-navbar" id="myNavbar">
-    <li class="w3-left-align"><a href="#">HOME</a></li>
-    <li class="w3-hide-small"><a href="#about"><i class="fa fa-user"></i> ABOUT</a></li>
-    <li class="w3-hide-small"><a href="#portfolio"><i class="fa fa-th"></i> PORTFOLIO</a></li>
-    <li class="w3-hide-small"><a href="#contact"><i class="fa fa-envelope"></i> CONTACT</a></li>
-  </ul>
+                <div class="item">
+                    <img src="img/Emmanuel2.jpg" alt="Emmanuel 3" width="1200" height="700">
+                    <div class="carousel-caption">
+                        <h1>Emmanuel Mugogo | Full Stack Web Developer</h1>
+                        <h2>Software Developer and Creator</h2>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
-    <ul class="w3-navbar w3-left-align w3-white">
-      <li><a href="#about" onclick="toggleFunction()">ABOUT</a></li>
-      <li><a href="#portfolio" onclick="toggleFunction()">PORTFOLIO</a></li>
-      <li><a href="#contact" onclick="toggleFunction()">CONTACT</a></li>
-      <li><a href="#">SEARCH</a></li>
-    </ul>
-  </div>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <!-- <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity"> <span class="w3-hide-small">Emmanuel</span> Mugogo</span> -->
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I <i class="fa fa-heart" aria-hidden="true"></i> Web Development</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>Hi, My name is Emmanuel Mugogo</b></p><br>
-      <img src="Images/Emmanuel1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Skills Progress:</p>
-  <p class="w3-wide"><i class="fa fa-tablet"></i>Front End</p>
-  <div class="w3-progress-container">
-    <div class="w3-progressbar" style="width:90%"></div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Back End</p>
-  <div class="w3-progress-container">
-    <div class="w3-progressbar" style="width:85%"></div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-database"></i>Database</p>
-  <div class="w3-progress-container">
-    <div class="w3-progressbar" style="width:80%"></div>
-  </div>
-</div>
-
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">850+</span><br>
-    Coding Hours at the SoftwareGuild
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">50+</span><br>
-    Skills Acquired
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">350+</span><br>
-    GitHub and BitBucket Contributions
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">20+</span><br>
-    Projects Completed
-  </div>
-</div>
-
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/Lucky7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-btn w3-light-grey w3-padding-xlarge" style="margin-top:64px">LOAD MORE</button>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-xxlarge w3-container w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-light-grey w3-wide">CONTACT</span>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE TO FIND ME</h3>
-  <p class="w3-center"><em>Please tell me something good or leave your feedback!</em></p>
-
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <!-- Add Google Maps -->
-      <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
-    </div>
-    <div class="w3-col m8 w3-container w3-section">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Columbus, OH<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +1 614 598 8443<br>
-        <i class="fa fa-skype fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Skype: emmanuelmugogo<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: emmanuelmugogo@gmail.com<br>
-      </div>
-      <p>Lets get in touch, leave me a note:</p>
-      <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-        <div class="w3-half">
-          <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Name">
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <div class="w3-half">
-          <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Email">
+        <!--end of home page-->
+
+        <!-- Container (About Section) -->
+        <div id="about" class="container text-center">
+            <h3>ABOUT</h3>
+            <p>EMMANUEL MUGOGO | <em>Web developer</em></p>
+            <p><Strong>Emmanuel</strong> is in his late 20's father of One and a Half, Husband of one. He likes to site himself to a third person. He is a US Navy Veteran with Backgrounds in Accounting and Supply Chain Management. His passion for computers and Technology got him to learn coding. He likes learning new things all the time and loves it. He plays soccer by Default, Pool Table by passion and Basketball for Hobby.</p>
+            <br>
+            <div class="row">
+
+                <!--<div class="col-sm-4">-->
+                <!-- <p class="text-center"><strong>Name</strong></p> --><br>
+                <a href="#demo2" data-toggle="collapse">
+                    <img src="img/Emmanuel3.JPG" class="img-circle" alt="Me on picture" width="600" height="600">
+                </a><br>
+                <div id="demo2" class="collapse">
+                    <p></p>
+                    <p>Ndio mimi</p>
+                    <p>Loves drummin'</p>
+                    <p>Member since 1988</p>
+                </div>
+                <!--</div>-->
+
+            </div>
         </div>
-      </div>
-      <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Comment">
-      <button class="w3-btn w3-section w3-right"><i class="fa fa-paper-plane w3-margin-right"></i>SEND MESSAGE</button>
-    </div>
-  </div>
-</div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16 w3-opacity w3-hover-opacity-off">
-  <div class="w3-xlarge w3-padding-32">
-    <a href="http://www.facebook.com/emmanuel.mugogo" class="w3-hover-text-indigo"><i class="fa fa-facebook-official"></i></a>
-     <a href="#" class="w3-hover-text-light-blue"><i class="fa fa-instagram"></i></a>
-    <a href="https://github.com/emmanuelmugogo" class="w3-hover-text-grey"><i class="fa fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/emmanuel-mugogo-71a75b101" class="w3-hover-text-indigo"><i class="fa fa-linkedin"></i></a>
-    <p> ©2016<br>Emmanuel Mugogo | Web developer | Software Engineer</p><br><br>
-    <a href="#" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  </div>
-</footer>
- 
-<!-- Add Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-<!-- Google Map Location -->
-var myCenter = new google.maps.LatLng(40.061974, -82.991028);
+        <!-- Container (PORTFOLIO Section) -->
+        <div id="portfolio" class="bg-1">
+            <div class="container">
+                <h3 class="text-center">PORTFOLIO</h3>
+                <p class="text-center">Here is some of my work<br> Please click on the link to view</p>
 
-function initialize() {
-var mapProp = {
-  center: myCenter,
-  zoom: 12,
-  scrollwheel: false,
-  draggable: false,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="thumbnail work">
+                            <img src="img/car.jpg" alt="Paris" width="400" height="300">
+                            <p><strong>Paris</strong></p>
+                            <p>Friday 27 November 2015</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail work">
+                            <img src="img/car.jpg" alt="New York" width="400" height="300">
+                             <p><strong>Paris</strong></p>
+                            <p>Friday 27 November 2015</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail work">
+                            <img src="img/car.jpg" alt="San Francisco" width="400" height="300">
+                             <p><strong>Paris</strong></p>
+                            <p>Friday 27 November 2015</p>
+                        </div>
+                    </div>
+                </div>
 
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="thumbnail work">
+                            <img src="img/car.jpg" alt="Paris" width="400" height="300">
+                             <p><strong>Paris</strong></p>
+                            <p>Friday 27 November 2015</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail work">
+                            <img src="img/car.jpg" alt="New York" width="400" height="300">
+                             <p><strong>Paris</strong></p>
+                            <p>Friday 27 November 2015</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail work">
+                            <img src="img/car.jpg" alt="San Francisco" width="400" height="300">
+                             <p><strong>Paris</strong></p>
+                            <p>Friday 27 November 2015</p>
+                        </div>
+                    </div>
+                </div>
 
-var marker = new google.maps.Marker({
-  position: myCenter,
-});
+            </div>
+            
+        </div>
 
-marker.setMap(map);
-}
+        <!--skills and progress start-->
+        <div id="skills" class="bg-2">
+            <div class="container">
+                <h3 class="text-center">SKILLS AND PROGRESS</h3>
+                <p class="text-center">Some of the Technologies i have been using so far</p>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/html5.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">95%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/css3.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">90%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/js.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">85%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/jquery.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">85%</p>
+                            </div>
+                        </div>
+                    </div>
 
-google.maps.event.addDomListener(window, 'load', initialize);
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/java.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">90%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/spring.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">85%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/junit.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">92%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/sql.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">88%</p>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/git.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">95%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/bootstrap.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">93%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/angular.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">80%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="img/logo/agile1.png" alt="...">
+                            <div class="caption">
+                                <h3></h3>
+                                <p class="text-center">80%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--skills and progress end-->
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
-    }
-}
+        <!-- Container (Contact Section) -->
+        <div class="bg-5">
+            <div id="contact" class="container">
+              <h3 class="text-center">CONTACT</h3>
+              <p class="text-center"><em>Find me across the internet and get in touch today!
+                      <br>Please feel free to contact me or follow me on any social network.</em></p>
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+              <div class="row">
+                  <div class="col-md-4">
+                      <p>Please get in touch with me via</p>
+                      <p><span class="glyphicon glyphicon-phone"></span><a href="tel:1-614-598-8443"> Phone: +1 (614) 598-8443</a></p>
+                      <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:mugoclan87@gmail.com"> Email: emmanuel.mugogo@gmail.com</a></p>
+                      <p><span class="fa fa-skype"></span><a href="skype:emmanuelmugogo?call"> Skype: emmanuelmugogo</a></p>
+                      <p><span class="fa fa-whatsapp"></span> Whatsapp: +1 (614) 598-8443</p>
+                      <p><span class="glyphicon glyphicon-map-marker"></span> Columbus, Ohio</p>
 
-</script>
+                  </div>
+                  <div class="col-md-8">
+                      <div class="row">
+                          <div class="col-sm-6 form-group">
+                              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                          </div>
+                          <div class="col-sm-6 form-group">
+                              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                          </div>
+                      </div>
 
-</body>
+                      <div class="row">
+                          <div class="col-sm-12 form-group">
+                              <input class="form-control" id="tel" name="name" placeholder="Telephone number" type="tel" required>
+                          </div>
+                      </div>
+
+                      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                      <br>
+                      <div class="row">
+                          <div class="col-sd-12 form-group">
+                              <button class="btn pull-right" type="submit">Send</button>
+                          </div>
+                      </div><br>
+                      <div class="row">
+                          <div class="col-xs-6 col-sm-4">
+                              <div class="lgf social">
+                                  <a href="https://www.linkedin.com/in/emmanuel-mugogo-71a75b101">
+                                      <img src="img/logo/LinkedIn.png">
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4">
+                              <div class="lgf social">
+                                  <a href="https://github.com/emmanuelmugogo">
+                                      <img src="img/logo/Github.png">
+                                  </a>
+                              </div>
+                          </div>
+
+                          <div class="col-xs-6 col-sm-4">
+                              <div class="lgf social">
+                                  <a href="http://www.facebook.com/emmanuel.mugogo">
+                                      <img src="img/logo/Facebook.png">
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- end of contact section -->
+
+        <!-- start of resume section -->
+
+        <div id="resume" class="bg-4">
+            <div class="container">
+                <div class="text-center">
+                    <p><span class="glyphicon glyphicon-send"></span></p>
+                    <h2>RESUME</h2>
+                    <p><em>If you are employer or recruiter, click below to Request a Resume and i will get back to you within 24Hrs</em></p>
+                    <button type="button" class="btn btn-default btn-lg"><a href="mailto:mugoclan87@gmail.com?Subject=Resume%20request">REQUEST A RESUME</a></button>
+                </div>
+            </div>
+        </div>
+        <!-- end of resume section -->
+
+
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                <p><span class="glyphicon glyphicon-chevron-up"></span><br>BACK TO THE TOP</p>
+            </a><br>
+            <p>Emmanuel Mugogo | Web developer | Software Engineer<br><small> &copy; 2017 - All Rights Reserved</small></p>
+        </footer>
+      <!-- end of footer -->
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/myJs.js"></script>
+    </body>
 </html>
-
-
