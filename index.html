@@ -367,15 +367,17 @@
                 <div id="follow" class="col-xs-6 text-center"></div>
             </div>
 
-            <!-- <div class="row">
-                <div class="col-xs-12 text-center">
-                    <div id="myRepos"></div>
-                </div>
-            </div> -->
+            <div class="row" id="reposHeader">
+              <div class="col-sm-3 col-xs-3" ></div>
+              <div class="col-sm-3 col-xs-3" id="repoLink" >Repo Link</div>
+              <div class="col-sm-3 col-xs-3" >Last Updates</div>
+              <div class="col-sm-3 col-xs-3" ></div>
+              <hr>
+            </div>
 
             <div class="row">
               <div class="col-sm-3 col-xs-3" ></div>
-              <div class="col-sm-3 col-xs-3" id="theRepos" style="color: red;"></div>
+              <div class="col-sm-3 col-xs-3" id="theRepos"></div>
               <div class="col-sm-3 col-xs-3" id="updates"></div>
               <div class="col-sm-3 col-xs-3" ></div>
             </div>
@@ -385,32 +387,34 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
+        </small> -->
+
+
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCSMMKliFzgcsTq9R-2CC0BeJIYG9Dq3Ps'></script>
+        <div style='overflow:hidden;height:100%;width:100%;'><div id='gmap_canvas' style='height:100%;width:100%;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+         <a href='https://add-map.com/'>embedding google maps</a> 
+
+         <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=214ba9dada951ba6d3e4328317d68789162703b4'></script>
+
+         <script type='text/javascript'>
+
+         function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(40.01623730000001,-83.0118061),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.01623730000001,-83.0118061)});infowindow = new google.maps.InfoWindow({content:'<strong>Emmanuel</strong><br>2645 N High St<br>43202 Columbus<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+
+         options = $.extend({
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    draggable: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}, options);
+
+         </script>
     </section>
-
-
-        </div>
-         <h3 class="text-center">My Github Repos</h3>
-
-            <div class="row">
-              <div class="col-sm-3 col-xs-3" ></div>
-              <div class="col-sm-3 col-xs-3" >REPO NAME</div>
-              <div class="col-sm-3 col-xs-3" >LAST UPDATES</div>
-              <div class="col-sm-3 col-xs-3" ></div>
-            </div>
-
-            <hr>
-
-            
-                 <!--  filled with Ajax -->
-      </div>
-
-
-
 
 
     <!-- Footer -->

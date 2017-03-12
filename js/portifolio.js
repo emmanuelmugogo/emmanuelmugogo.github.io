@@ -1,46 +1,5 @@
-//  $(document).ready(function(){
-            
-//             var $theRepos = $('#theRepos')
-//             var $updates = $('#updates')
-   
-
-//                 $.get("https://api.github.com/users/emmanuelmugogo", function(data, status){
-
-//                     var  item= data.repos_url;
-
-                        
-//                     $.get(item,function(data,status){
-
-//                         for(var idx=0; idx<data.length; idx++){
-//                             var repo = data[idx];
-//                             var link = repo.html_url;
-//                             var name = repo.name;
-//                             var repoUpdate = new Date(repo.updated_at);
-//                             var repoUpdateLocale = repoUpdate.toString("MM/dd/yy - hh:mm tt");
-
-//                             $theRepos.append('<p><a href="' + link + '">' + name +'</p li>');
-//                             $updates.append('<p>' + repoUpdateLocale + '</p>');
-
-                          
-                        
-//                         //These pull the exact element by name out of the repo.
-                        
-//                         }
-//                     });      
-//         });
-
-// });
-
-
-
-
-
-
-
-
-
-
 $( document ).ready(function() {
+    $('#reposHeader').hide();
 
 //display repos stats
             var $numOfRepos = $('#numOfRepos');
@@ -48,50 +7,55 @@ $( document ).ready(function() {
             var $updates = $('#updates');
             var $myRepos = $('#myRepos');
 
-            $("#repos").click(function(){
+
+            // $("#repos").click(function(){
+            //     $.getJSON("https://api.github.com/users/emmanuelmugogo", function(repo) {
+                    
+            //         $numOfRepos.append(repo.public_repos + " Public Repos" + "<hr>");
+            //         $follow.append(repo.following + " People i Follow" + "<hr>");
+            //     });
+            // });
+
+
+
+            
+            $('#repos').click(function() {
+
+                var clicks = $(this).data('clicks');
+
+                //this controls odd number of clicks
+              if (clicks) {
+                
                 $.getJSON("https://api.github.com/users/emmanuelmugogo", function(repo) {
                     
-                    $numOfRepos.append(repo.public_repos + " Public Repos");
-                    $follow.append(repo.following + " People i do follow");
+                    $numOfRepos.append(repo.public_repos + " Public Repos" + "<hr>");
+                    $follow.append(repo.following + " People i Follow" + "<hr>");
 
+                    $numOfRepos.show();
+                    $follow.show();
 
-                    //I will use this to show the update date and hours for every repo.
-                    // var repoUpdate = new Date(repo.updated_at);
-                    // var repoUpdateLocale = repoUpdate.toString("MM/dd/yy, hh:mm tt");
-
-
-                    // $updates.append("Updated " + repoUpdateLocale);
                 });
+                //clicks = false;
+              } else {
+                
+                //this controls even number of clicks
+                $numOfRepos.hide();
+                $follow.hide();
+
+               // clicks = true;
+              }
+              $(this).data("clicks", !clicks);
             });
-
-// display all repos and its url to github
-
-// $("#allRepos").click(function(){
-//                 $.getJSON("https://api.github.com/users/emmanuelmugogo", function(repo) {
-                      
-//                         $.getJSON("repo.repos_url", function(data) {
-
-//                         $.each(data, function( index, repoData ) {
-
-//                            console.log(repoData.name, repoData.html_url, repoData.updated_at, repoData.subscriptions_url);
-
-//                     $("#myRepos").append("<li><a href=" + repoData.repos_url + ">" + repoData.html_url + "<p>last update: " + repoData.updated_at +"</p>" + "</a></li>");
-                    
-
-//                     });
-//             });
-
-//                 });
-//             });
 
 
 
 
 
 $("#allRepos").click(function(){
+    $('#reposHeader').show();
 
   var $theRepos = $('#theRepos')
-            var $updates = $('#updates')
+  var $updates = $('#updates')
    
 
                 $.get("https://api.github.com/users/emmanuelmugogo", function(data, status){
@@ -101,8 +65,8 @@ $("#allRepos").click(function(){
                         
                     $.get(item,function(data,status){
 
-                        for(var idx=0; idx<data.length; idx++){
-                            var repo = data[idx];
+                        for(var i=0; i<data.length; i++){
+                            var repo = data[i];
                             var link = repo.html_url;
                             var name = repo.name;
                             var repoUpdate = new Date(repo.updated_at);
@@ -110,10 +74,6 @@ $("#allRepos").click(function(){
 
                             $theRepos.append('<p><a href="' + link + '">' + name +'</p li>');
                             $updates.append('<p>' + repoUpdateLocale + '</p>');
-
-                          
-                        
-                        //These pull the exact element by name out of the repo.
                         
                         }
                     });      
@@ -175,23 +135,25 @@ $("#allRepos").click(function(){
             }
         }
     });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        };
-        // Enable map zooming with mouse scroll when the user clicks the map
-    // $('.map').on('click', onMapClickHandler);
+    // // Disable Google Maps scrolling
+    // // See http://stackoverflow.com/a/25904582/1607849
+    // // Disable scroll zooming and bind back the click event
+    // var onMapMouseleaveHandler = function(event) {
+    //     var that = $(this);
+    //     that.on('click', onMapClickHandler);
+    //     that.off('mouseleave', onMapMouseleaveHandler);
+    //     that.find('iframe').css("pointer-events", "none");
+    // }
+    // var onMapClickHandler = function(event) {
+    //         var that = $(this);
+    //         // Disable the click handler until the user leaves the map area
+    //         that.off('click', onMapClickHandler);
+    //         // Enable scrolling zoom
+    //         that.find('iframe').css("pointer-events", "auto");
+    //         // Handle the mouse leave event
+    //         that.on('mouseleave', onMapMouseleaveHandler);
+    //     };
+    //     // Enable map zooming with mouse scroll when the user clicks the map
+    // // $('.map').on('click', onMapClickHandler);
+
+    // 

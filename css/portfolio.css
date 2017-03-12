@@ -307,7 +307,16 @@ footer {
 }
 
 #theRepos {
-    background-color: white;
+    text-align: right;
+    color: white;
+
+}
+
+#theRepos a {
+    color: inherit; 
+}
+
+#repoLink {
     text-align: right;
 }
 
