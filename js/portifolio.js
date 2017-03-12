@@ -1,3 +1,45 @@
+//  $(document).ready(function(){
+            
+//             var $theRepos = $('#theRepos')
+//             var $updates = $('#updates')
+   
+
+//                 $.get("https://api.github.com/users/emmanuelmugogo", function(data, status){
+
+//                     var  item= data.repos_url;
+
+                        
+//                     $.get(item,function(data,status){
+
+//                         for(var idx=0; idx<data.length; idx++){
+//                             var repo = data[idx];
+//                             var link = repo.html_url;
+//                             var name = repo.name;
+//                             var repoUpdate = new Date(repo.updated_at);
+//                             var repoUpdateLocale = repoUpdate.toString("MM/dd/yy - hh:mm tt");
+
+//                             $theRepos.append('<p><a href="' + link + '">' + name +'</p li>');
+//                             $updates.append('<p>' + repoUpdateLocale + '</p>');
+
+                          
+                        
+//                         //These pull the exact element by name out of the repo.
+                        
+//                         }
+//                     });      
+//         });
+
+// });
+
+
+
+
+
+
+
+
+
+
 $( document ).ready(function() {
 
 //display repos stats
@@ -48,15 +90,34 @@ $( document ).ready(function() {
 
 $("#allRepos").click(function(){
 
-    var tableCellNonNumeric = "<td class=\"mdl-data-table__cell--non-numeric\">";
-    $.getJSON('https://api.github.com/users/emmanuelmugogo/repos', function(response) {
-        $.each(response, function(index, repo) {
-            var repoNameLink = "<a href=\"" + repo.html_url + "\" target=\"_blank\">" + repo.name + "</a>";
-            var repoUpdate = new Date(repo.updated_at);
-            var repoUpdateLocale = repoUpdate.toString("MM/dd/yy, HH:mm");
-            $('#myRepos').append("<tr>" + tableCellNonNumeric + repoNameLink + "</td><td>" + repoUpdateLocale + " EST</td></tr>");
+  var $theRepos = $('#theRepos')
+            var $updates = $('#updates')
+   
+
+                $.get("https://api.github.com/users/emmanuelmugogo", function(data, status){
+
+                    var  item= data.repos_url;
+
+                        
+                    $.get(item,function(data,status){
+
+                        for(var idx=0; idx<data.length; idx++){
+                            var repo = data[idx];
+                            var link = repo.html_url;
+                            var name = repo.name;
+                            var repoUpdate = new Date(repo.updated_at);
+                            var repoUpdateLocale = repoUpdate.toString("MM/dd/yy - hh:mm tt");
+
+                            $theRepos.append('<p><a href="' + link + '">' + name +'</p li>');
+                            $updates.append('<p>' + repoUpdateLocale + '</p>');
+
+                          
+                        
+                        //These pull the exact element by name out of the repo.
+                        
+                        }
+                    });      
         });
-    });
                 
 
     }); 

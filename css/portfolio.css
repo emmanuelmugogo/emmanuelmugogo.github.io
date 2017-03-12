@@ -306,7 +306,10 @@ footer {
   }
 }
 
-
+#theRepos {
+    background-color: white;
+    text-align: right;
+}
 
 
 
