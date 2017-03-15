@@ -1,68 +1,25 @@
-$( document ).ready(function() {
+$(document).ready(function() {
+
+    //hide all these divs when the page loads
     $('#reposHeader').hide();
-
-//display repos stats
-            var $numOfRepos = $('#numOfRepos');
-            var $follow = $('#follow');
-            var $updates = $('#updates');
-            var $myRepos = $('#myRepos');
+    $('#theRepos').hide();
+    $('#updates').hide();
+    $('#github-stats').hide();
 
 
-            // $("#repos").click(function(){
-            //     $.getJSON("https://api.github.com/users/emmanuelmugogo", function(repo) {
-                    
-            //         $numOfRepos.append(repo.public_repos + " Public Repos" + "<hr>");
-            //         $follow.append(repo.following + " People i Follow" + "<hr>");
-            //     });
-            // });
+        //variable declared to be used after ajax call
+        var $theRepos = $('#theRepos');
+        var $updates = $('#updates');
+        var $numOfRepos = $('#numOfRepos');
+        var $follow = $('#follow');
+        var $avatar = $('#avatar');
+        var $myName = $('#myName');
+        var $myLocation = $('#myLocation');
 
-
-
-            
-            $('#repos').click(function() {
-
-                var clicks = $(this).data('clicks');
-
-                //this controls odd number of clicks
-              if (clicks) {
-                
-                $.getJSON("https://api.github.com/users/emmanuelmugogo", function(repo) {
-                    
-                    $numOfRepos.append(repo.public_repos + " Public Repos" + "<hr>");
-                    $follow.append(repo.following + " People i Follow" + "<hr>");
-
-                    $numOfRepos.show();
-                    $follow.show();
-
-                });
-                //clicks = false;
-              } else {
-                
-                //this controls even number of clicks
-                $numOfRepos.hide();
-                $follow.hide();
-
-               // clicks = true;
-              }
-              $(this).data("clicks", !clicks);
-            });
-
-
-
-
-
-$("#allRepos").click(function(){
-    $('#reposHeader').show();
-
-  var $theRepos = $('#theRepos')
-  var $updates = $('#updates')
-   
-
+                //firstApi-call
                 $.get("https://api.github.com/users/emmanuelmugogo", function(data, status){
 
-                    var  item= data.repos_url;
-
-                        
+                    var  item= data.repos_url;    
                     $.get(item,function(data,status){
 
                         for(var i=0; i<data.length; i++){
@@ -70,19 +27,87 @@ $("#allRepos").click(function(){
                             var link = repo.html_url;
                             var name = repo.name;
                             var repoUpdate = new Date(repo.updated_at);
-                            var repoUpdateLocale = repoUpdate.toString("MM/dd/yy - hh:mm tt");
+                            var repoUpdateLocale = repoUpdate.toString("MM/dd | hh:mm - tt");
 
                             $theRepos.append('<p><a href="' + link + '">' + name +'</p li>');
                             $updates.append('<p>' + repoUpdateLocale + '</p>');
                         
                         }
                     });      
-        });
+                });
+
+                //second Api-call
+                $.getJSON("https://api.github.com/users/emmanuelmugogo", function(repo) {
+                    
+                    $numOfRepos.append(repo.public_repos + " Public GITHUB Repos");
+                    $follow.append(repo.following + " Following");
+                    $myName.append(repo.name);
+                    $myLocation.append(repo.location);
+                    $avatar.append('<img src="'+repo.avatar_url+'" class="img-circle" alt="Emmanuel-Pic" width="150" height="150">');
+
+                });
+
+//repos button
+$('#repos').click(function() {
+
+    var clicks = $(this).data('clicks');
+
+                //this controls even number of clicks
+              if (clicks) {
+                    
+                  document.getElementById("repos").innerHTML = "GitHub Stats";
+                  $('#github-stats').hide();
+
                 
+                
+                //clicks = false;
+              } else {
+                
+                //this controls odd number of clicks
 
-    }); 
+                
+                document.getElementById("repos").innerHTML = "Hide GitHub Stats";
+                $('#github-stats').show();
+                
+               // clicks = true;
+              }
+              $(this).data("clicks", !clicks);
 
-    }); 
+}); //end of repos click button
+
+
+
+
+//all repos button
+$('#allRepos').click(function() {
+
+                var clicks = $(this).data('clicks');
+
+                //this controls even number of clicks
+              if (clicks) {
+                $('#reposHeader').hide();
+                 $('#theRepos').hide();
+                  $('#updates').hide();
+                  document.getElementById("allRepos").innerHTML = "GitHub Repos";    
+                
+                //clicks = false;
+              } else {
+                
+                //this controls odd number of clicks
+
+                $('#reposHeader').show();
+                $('#theRepos').show();
+                $('#updates').show();
+                document.getElementById("allRepos").innerHTML = "Hide GitHub Repos";
+                
+               // clicks = true;
+              }
+              $(this).data("clicks", !clicks);
+            }); //end of allRepos button
+
+}); //end of Document.ready
+
+
 
 
  // Closes the sidebar menu
@@ -135,25 +160,4 @@ $("#allRepos").click(function(){
             }
         }
     });
-    // // Disable Google Maps scrolling
-    // // See http://stackoverflow.com/a/25904582/1607849
-    // // Disable scroll zooming and bind back the click event
-    // var onMapMouseleaveHandler = function(event) {
-    //     var that = $(this);
-    //     that.on('click', onMapClickHandler);
-    //     that.off('mouseleave', onMapMouseleaveHandler);
-    //     that.find('iframe').css("pointer-events", "none");
-    // }
-    // var onMapClickHandler = function(event) {
-    //         var that = $(this);
-    //         // Disable the click handler until the user leaves the map area
-    //         that.off('click', onMapClickHandler);
-    //         // Enable scrolling zoom
-    //         that.find('iframe').css("pointer-events", "auto");
-    //         // Handle the mouse leave event
-    //         that.on('mouseleave', onMapMouseleaveHandler);
-    //     };
-    //     // Enable map zooming with mouse scroll when the user clicks the map
-    // // $('.map').on('click', onMapClickHandler);
-
-    // 
+    
